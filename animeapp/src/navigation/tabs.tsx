@@ -21,7 +21,7 @@ function TabNavigator() {
         activeTintColor: palette.lightBlue,
         inactiveTintColor: palette.shyBlue,
         showLabel: false,
-        style:{backgroundColor: palette.black}
+        style:{backgroundColor: palette.black, borderTopWidth: 0}
       }}
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
