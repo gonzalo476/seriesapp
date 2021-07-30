@@ -2,7 +2,13 @@ import React from 'react'
 import { ScrollView, StyleSheet, StatusBar, Platform } from 'react-native'
 
 import { Text, Box, images, icons } from '../../constants'
-import { ScreenContainer, RoundedImage, Icon, GlassCard } from '../components'
+import { 
+  ScreenContainer, 
+  RoundedImage, 
+  Icon, 
+  GlassCard, 
+  GlassSection 
+} from '../components'
 
 const styles = StyleSheet.create({
   scrollStyles: { 
@@ -47,6 +53,11 @@ const Home = () => {
                     Involved in mobile development and web applications.
                   </Text>
                 </GlassCard>
+              </Box>
+              <Box marginVertical="l" width="100%">
+                <GlassSection icon={icons.education}>
+                  <Text variant="title3" marginVertical="m">Experience</Text>
+                </GlassSection>
               </Box>
             </Box>
             <Box width="100%" height={150}/>
