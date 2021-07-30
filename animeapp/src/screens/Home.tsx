@@ -1,20 +1,16 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet } from 'react-native'
+
+import { Text } from '../../constants'
+import { ScreenContainer } from '../components'
+
 
 const Home = () => {
     return (
-        <View style={styles.container}>
-            <Text>Home</Text>
-        </View>
+        <ScreenContainer>
+          <Text color='white'>Home</Text>
+        </ScreenContainer>
     )
 }
 
 export default Home
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
-})
