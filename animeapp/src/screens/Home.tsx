@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, StyleSheet, StatusBar } from 'react-native'
+import { ScrollView, StyleSheet, StatusBar, Platform } from 'react-native'
 
 import { Text, Box, images, icons } from '../../constants'
 import { ScreenContainer, RoundedImage, Icon } from '../components'
@@ -7,7 +7,7 @@ import { ScreenContainer, RoundedImage, Icon } from '../components'
 const styles = StyleSheet.create({
   scrollStyles: { 
     flex: 1, 
-    paddingTop: '30%' 
+    paddingTop: Platform.OS === 'ios' ? '30%' : '20%' 
   }
 })
 
