@@ -6,7 +6,7 @@ const App = () => {
     <View>
       <Text>Series app</Text>
     </View>
-  );
-};
+  )
+}
 
-export default App;
+export default App
