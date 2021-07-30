@@ -41,10 +41,10 @@ const Home = () => {
               </Box>
               <Box>
                 <GlassCard width="80%" icon={icons.education}>
-                  <Text variant="title3">Education</Text>
+                  <Text variant="title3" marginVertical="s">Education</Text>
                   <Text variant="subhead" textAlign="center">
                     Graduated Software Engineer from Universidad de Colima, México. 
-                    Involved in Mobile development and Web aplications.
+                    Involved in mobile development and web applications.
                   </Text>
                 </GlassCard>
               </Box>
