@@ -11,10 +11,10 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		28B1973E2C99477D80AB3939 /* Gellix-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 060F0DD63A8B4C8596D73532 /* Gellix-Medium.otf */; };
 		5BC8506980A7FF257D4E463C /* libPods-animeapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B5E0DF57BBD0B2755D14EB5 /* libPods-animeapp.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		AA0BFFCAED61BA515A7392B7 /* libPods-animeapp-animeappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C43BCB5CD40C27E04BFC6292 /* libPods-animeapp-animeappTests.a */; };
-		28B1973E2C99477D80AB3939 /* Gellix-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 060F0DD63A8B4C8596D73532 /* Gellix-Medium.otf */; };
 		E183B8ECED9A48918B9B0A85 /* Gellix-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FCEB9503CC2247C2BD74A22E /* Gellix-Regular.otf */; };
 		ED0BF6DCBB294A2F868B0B41 /* Gellix-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 886172430B1D4C20B787B4E6 /* Gellix-SemiBold.otf */; };
 /* End PBXBuildFile section */
@@ -33,6 +33,7 @@
 		00E356EE1AD99517003FC87E /* animeappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = animeappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* animeappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = animeappTests.m; sourceTree = "<group>"; };
+		060F0DD63A8B4C8596D73532 /* Gellix-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gellix-Medium.otf"; path = "../assets/fonts/Gellix-Medium.otf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* animeapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = animeapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = animeapp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = animeapp/AppDelegate.m; sourceTree = "<group>"; };
@@ -43,13 +44,12 @@
 		3C9D8FE704398AC7DFEA2DB5 /* Pods-animeapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-animeapp.release.xcconfig"; path = "Target Support Files/Pods-animeapp/Pods-animeapp.release.xcconfig"; sourceTree = "<group>"; };
 		638184731F04B14424B80CA5 /* Pods-animeapp-animeappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-animeapp-animeappTests.release.xcconfig"; path = "Target Support Files/Pods-animeapp-animeappTests/Pods-animeapp-animeappTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = animeapp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		886172430B1D4C20B787B4E6 /* Gellix-SemiBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gellix-SemiBold.otf"; path = "../assets/fonts/Gellix-SemiBold.otf"; sourceTree = "<group>"; };
 		99FFB965947E72232E838BFC /* Pods-animeapp-animeappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-animeapp-animeappTests.debug.xcconfig"; path = "Target Support Files/Pods-animeapp-animeappTests/Pods-animeapp-animeappTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC915D9AAFADCBCC14E8652F /* Pods-animeapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-animeapp.debug.xcconfig"; path = "Target Support Files/Pods-animeapp/Pods-animeapp.debug.xcconfig"; sourceTree = "<group>"; };
 		C43BCB5CD40C27E04BFC6292 /* libPods-animeapp-animeappTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-animeapp-animeappTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		060F0DD63A8B4C8596D73532 /* Gellix-Medium.otf */ = {isa = PBXFileReference; name = "Gellix-Medium.otf"; path = "../assets/fonts/Gellix-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		FCEB9503CC2247C2BD74A22E /* Gellix-Regular.otf */ = {isa = PBXFileReference; name = "Gellix-Regular.otf"; path = "../assets/fonts/Gellix-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		886172430B1D4C20B787B4E6 /* Gellix-SemiBold.otf */ = {isa = PBXFileReference; name = "Gellix-SemiBold.otf"; path = "../assets/fonts/Gellix-SemiBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FCEB9503CC2247C2BD74A22E /* Gellix-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gellix-Regular.otf"; path = "../assets/fonts/Gellix-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,15 +157,15 @@
 			sourceTree = "<group>";
 		};
 		B75C9F0E0A004A70A31B8C48 /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				060F0DD63A8B4C8596D73532 /* Gellix-Medium.otf */,
 				FCEB9503CC2247C2BD74A22E /* Gellix-Regular.otf */,
 				886172430B1D4C20B787B4E6 /* Gellix-SemiBold.otf */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
