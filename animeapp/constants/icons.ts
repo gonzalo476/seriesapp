@@ -9,6 +9,7 @@ const reactIcon = require('../assets/icons/react-icon.png');
 const mongoIcon = require('../assets/icons/mongo-icon.png');
 const jsIcon = require('../assets/icons/js-icon.png');
 const sketchIcon = require('../assets/icons/sketch-icon.png');
+const education = require('../assets/icons/education.png');
 
 export default {
     home,
@@ -21,5 +22,6 @@ export default {
     reactIcon,
     mongoIcon,
     jsIcon,
-    sketchIcon
+    sketchIcon,
+    education
 }
