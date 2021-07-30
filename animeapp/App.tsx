@@ -1,11 +1,16 @@
 import React from 'react'
-import {View, Text} from 'react-native'
+import { ThemeProvider } from '@shopify/restyle'
+
+import { Theme } from './constants'
+import Src from './src'
 
 const App = () => {
   return (
-    <View>
-      <Text>Series app</Text>
-    </View>
+    <>
+      <ThemeProvider theme={Theme}>
+        <Src />
+      </ThemeProvider>
+    </>
   )
 }
 
