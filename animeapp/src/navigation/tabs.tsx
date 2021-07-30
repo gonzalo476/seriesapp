@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { TabIcon } from '../components'
 
 // Import icons
-import { icons } from '../../constants'
+import { icons, palette } from '../../constants'
 
 // Bottom tab screens
 import Home from '../screens/Home'
@@ -17,6 +17,12 @@ const Tab = createBottomTabNavigator()
 function TabNavigator() {
   return (
     <Tab.Navigator
+      tabBarOptions={{
+        activeTintColor: palette.lightBlue,
+        inactiveTintColor: palette.shyBlue,
+        showLabel: false,
+        style:{backgroundColor: palette.black}
+      }}
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName

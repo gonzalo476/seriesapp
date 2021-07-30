@@ -10,8 +10,8 @@ const Stack = createStackNavigator()
 function AppNavigator() {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name="Home" component={AppTabs}/>
+            <Stack.Navigator headerMode="none">
+                <Stack.Screen name="Home" component={AppTabs} />
             </Stack.Navigator>
         </NavigationContainer>
     )
