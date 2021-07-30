@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, StyleSheet } from 'react-native'
+import { ScrollView, StyleSheet, StatusBar } from 'react-native'
 
 import { Text, Box, images, icons } from '../../constants'
 import { ScreenContainer, RoundedImage, Icon } from '../components'
@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
 const Home = () => {
     return (
         <ScreenContainer>
+          <StatusBar barStyle="light-content" backgroundColor="black" />
           <ScrollView style={styles.scrollStyles}>
             <Box 
               alignItems="center"
