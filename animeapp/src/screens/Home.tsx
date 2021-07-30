@@ -1,13 +1,13 @@
 import React from 'react'
-import { ScrollView, StyleSheet, StatusBar } from 'react-native'
+import { ScrollView, StyleSheet, StatusBar, Platform } from 'react-native'
 
 import { Text, Box, images, icons } from '../../constants'
-import { ScreenContainer, RoundedImage, Icon } from '../components'
+import { ScreenContainer, RoundedImage, Icon, GlassCard } from '../components'
 
 const styles = StyleSheet.create({
   scrollStyles: { 
     flex: 1, 
-    paddingTop: '30%' 
+    paddingTop: Platform.OS === 'ios' ? '30%' : '20%',
   }
 })
 
@@ -39,7 +39,17 @@ const Home = () => {
                   based in México. He is also a Designer with more than 9 years of experience. 
                 </Text>
               </Box>
+              <Box>
+                <GlassCard width="80%" icon={icons.education}>
+                  <Text variant="title3">Education</Text>
+                  <Text variant="subhead" textAlign="center">
+                    Graduated Software Engineer from Universidad de Colima, México. 
+                    Involved in Mobile development and Web aplications.
+                  </Text>
+                </GlassCard>
+              </Box>
             </Box>
+            <Box width="100%" height={150}/>
           </ScrollView>
         </ScreenContainer>
     )

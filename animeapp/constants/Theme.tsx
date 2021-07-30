@@ -34,19 +34,19 @@ const theme: BaseTheme = {
             color: 'white'
         },
         title1: {
-            fontFamily: 'Gellix-Regular',
+            fontFamily: 'Gellix-SemiBold',
             lineHeight: 34,
             fontSize: 28,
             color: 'white'
         },
         title2: {
-            fontFamily: 'Gellix-Regular',
+            fontFamily: 'Gellix-SemiBold',
             lineHeight: 28,
             fontSize: 22,
             color: 'white'
         },
         title3: {
-            fontFamily: 'Gellix-Regular',
+            fontFamily: 'Gellix-SemiBold',
             lineHeight: 25,
             fontSize: 20,
             color: 'white'
