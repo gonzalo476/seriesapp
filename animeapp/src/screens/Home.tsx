@@ -19,6 +19,10 @@ const Home = () => {
               alignItems="center"
             >
               <RoundedImage size={150} image={images.profileImage} />
+              <Box marginVertical="l" alignItems="center">
+                <Text variant="title1" >Gonzalo Rojas</Text>
+                <Text variant="caption2" color="gray">React Native Developer/Designer</Text>
+              </Box>
             </Box>
           </ScrollView>
         </ScreenContainer>
