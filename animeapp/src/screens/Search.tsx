@@ -1,14 +1,25 @@
 import React from 'react'
-import { SafeAreaView } from 'react-native'
+import { SafeAreaView, ScrollView } from 'react-native'
 
-import { ScreenContainer } from '../components'
-import { Text, Box } from '../../constants'
+import { ScreenContainer, RoundedImage } from '../components'
+import { Text, Box, images } from '../../constants'
 
 const Search = () => {
     return (
         <ScreenContainer>
             <SafeAreaView />
-            <Text color="white">Search</Text>
+            <ScrollView>
+                <Box 
+                  flexDirection="row" 
+                  justifyContent="space-between"
+                  alignItems="center"
+                  marginHorizontal="m"
+                  marginTop="l"
+                >
+                  <Text color="white" variant="largeTitle">Welcome!</Text>
+                  <RoundedImage size={40} image={images.face}/>
+                </Box>
+            </ScrollView>
         </ScreenContainer>
     )
 }
