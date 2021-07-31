@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const handleOpenApp = (url) => (
+const handleOpenApp = (url: string) => (
   Linking.canOpenURL(url).then(supported => {
   if (supported) {
     Linking.openURL(url);
