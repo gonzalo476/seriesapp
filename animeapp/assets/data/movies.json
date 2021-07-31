@@ -1,0 +1,347 @@
+{
+"anime": {
+          "pageInfo": {
+            "hasNextPage": true,
+            "endCursor": "MTE",
+            "startCursor": "Mg"
+          },
+          "totalCount": 18141,
+          "nodes": [
+            {
+              "id": "44764",
+              "titles": {
+                "canonical": "Da Yu Hai Tang"
+              },
+              "favoritesCount": 0,
+              "categories": {
+                "nodes": [
+                  {
+                    "id": "233",
+                    "title": {
+                      "en": "Supernatural"
+                    }
+                  },
+                  {
+                    "id": "164",
+                    "title": {
+                      "en": "Romance"
+                    }
+                  },
+                  {
+                    "id": "184",
+                    "title": {
+                      "en": "Drama"
+                    }
+                  },
+                  {
+                    "id": "157",
+                    "title": {
+                      "en": "Adventure"
+                    }
+                  }
+                ]
+              },
+              "episodeCount": 1,
+              "episodeLength": 420,
+              "posterImage": {
+                "original": {
+                  "url": "https://media.kitsu.io/anime/poster_images/44764/original.jpg?1623970091"
+                }
+              }
+            },
+            {
+              "id": "463",
+              "titles": {
+                "canonical": "Fatal Fury: The Motion Picture"
+              },
+              "favoritesCount": 2,
+              "categories": {
+                "nodes": [
+                  {
+                    "id": "150",
+                    "title": {
+                      "en": "Action"
+                    }
+                  },
+                  {
+                    "id": "30",
+                    "title": {
+                      "en": "Martial Arts"
+                    }
+                  },
+                  {
+                    "id": "157",
+                    "title": {
+                      "en": "Adventure"
+                    }
+                  },
+                  {
+                    "id": "164",
+                    "title": {
+                      "en": "Romance"
+                    }
+                  }
+                ]
+              },
+              "episodeCount": 1,
+              "episodeLength": 5400,
+              "posterImage": {
+                "original": {
+                  "url": "https://media.kitsu.io/anime/poster_images/463/original.png?1430839062"
+                }
+              }
+            },
+            {
+              "id": "44780",
+              "titles": {
+                "canonical": "Battle Mode"
+              },
+              "favoritesCount": 0,
+              "categories": {
+                "nodes": [
+                  {
+                    "id": "75",
+                    "title": {
+                      "en": "Parody"
+                    }
+                  },
+                  {
+                    "id": "150",
+                    "title": {
+                      "en": "Action"
+                    }
+                  }
+                ]
+              },
+              "episodeCount": 1,
+              "episodeLength": 1,
+              "posterImage": {
+                "original": {
+                  "url": "https://media.kitsu.io/anime/poster_images/44780/original.jpg?1624129701"
+                }
+              }
+            },
+            {
+              "id": "2303",
+              "titles": {
+                "canonical": "With You: Mitsumeteitai"
+              },
+              "favoritesCount": 0,
+              "categories": {
+                "nodes": [
+                  {
+                    "id": "164",
+                    "title": {
+                      "en": "Romance"
+                    }
+                  },
+                  {
+                    "id": "156",
+                    "title": {
+                      "en": "Fantasy"
+                    }
+                  },
+                  {
+                    "id": "172",
+                    "title": {
+                      "en": "School Life"
+                    }
+                  },
+                  {
+                    "id": "234",
+                    "title": {
+                      "en": "Mystery"
+                    }
+                  }
+                ]
+              },
+              "episodeCount": 2,
+              "episodeLength": 1800,
+              "posterImage": {
+                "original": {
+                  "url": "https://media.kitsu.io/anime/poster_images/2303/original.jpg?1408446358"
+                }
+              }
+            },
+            {
+              "id": "3712",
+              "titles": {
+                "canonical": "Yama Nezumi Rocky Chuck"
+              },
+              "favoritesCount": 0,
+              "categories": {
+                "nodes": [
+                  {
+                    "id": "156",
+                    "title": {
+                      "en": "Fantasy"
+                    }
+                  },
+                  {
+                    "id": "157",
+                    "title": {
+                      "en": "Adventure"
+                    }
+                  },
+                  {
+                    "id": "239",
+                    "title": {
+                      "en": "Kids"
+                    }
+                  }
+                ]
+              },
+              "episodeCount": 52,
+              "episodeLength": 1560,
+              "posterImage": {
+                "original": {
+                  "url": "https://media.kitsu.io/anime/poster_images/3712/original.jpg?1408450425"
+                }
+              }
+            },
+            {
+              "id": "10298",
+              "titles": {
+                "canonical": "Ousama Monogatari"
+              },
+              "favoritesCount": 1,
+              "categories": {
+                "nodes": [
+                  {
+                    "id": "157",
+                    "title": {
+                      "en": "Adventure"
+                    }
+                  },
+                  {
+                    "id": "239",
+                    "title": {
+                      "en": "Kids"
+                    }
+                  }
+                ]
+              },
+              "episodeCount": 11,
+              "episodeLength": 300,
+              "posterImage": {
+                "original": {
+                  "url": "https://media.kitsu.io/anime/poster_images/10298/original.jpg?1483874494"
+                }
+              }
+            },
+            {
+              "id": "8547",
+              "titles": {
+                "canonical": "Majokko Shimai no Yoyo to Nene Movie Extra: Hatsukoi - Mikako Komatsu"
+              },
+              "favoritesCount": 0,
+              "categories": {
+                "nodes": [
+                  {
+                    "id": "132",
+                    "title": {
+                      "en": "Music"
+                    }
+                  }
+                ]
+              },
+              "episodeCount": 1,
+              "episodeLength": 120,
+              "posterImage": {
+                "original": {
+                  "url": "https://media.kitsu.io/anime/poster_images/8547/original.jpg?1597698803"
+                }
+              }
+            },
+            {
+              "id": "44823",
+              "titles": {
+                "canonical": "Alice to Therese no Maboroshi Koujou"
+              },
+              "favoritesCount": 0,
+              "categories": {
+                "nodes": []
+              },
+              "episodeCount": 1,
+              "episodeLength": null,
+              "posterImage": {
+                "original": {
+                  "url": "https://media.kitsu.io/anime/poster_images/44823/original.jpg?1624811867"
+                }
+              }
+            },
+            {
+              "id": "44825",
+              "titles": {
+                "canonical": "Ficfyon7"
+              },
+              "favoritesCount": 0,
+              "categories": {
+                "nodes": [
+                  {
+                    "id": "238",
+                    "title": {
+                      "en": "Dementia"
+                    }
+                  },
+                  {
+                    "id": "232",
+                    "title": {
+                      "en": "Psychological"
+                    }
+                  }
+                ]
+              },
+              "episodeCount": 1,
+              "episodeLength": 180,
+              "posterImage": {
+                "original": {
+                  "url": "https://media.kitsu.io/anime/poster_images/44825/original.jpg?1624837358"
+                }
+              }
+            },
+            {
+              "id": "10870",
+              "titles": {
+                "canonical": "Kyoufu Shinbun (2014)"
+              },
+              "favoritesCount": 1,
+              "categories": {
+                "nodes": [
+                  {
+                    "id": "38",
+                    "title": {
+                      "en": "Ghost"
+                    }
+                  },
+                  {
+                    "id": "158",
+                    "title": {
+                      "en": "Horror"
+                    }
+                  },
+                  {
+                    "id": "156",
+                    "title": {
+                      "en": "Fantasy"
+                    }
+                  },
+                  {
+                    "id": "81",
+                    "title": {
+                      "en": "Japan"
+                    }
+                  }
+                ]
+              },
+              "episodeCount": 16,
+              "episodeLength": 600,
+              "posterImage": {
+                "original": {
+                  "url": "https://media.kitsu.io/anime/poster_images/10870/original.jpg?1428953120"
+                }
+              }
+            }
+          ]
+        }
+    }

@@ -1,8 +1,18 @@
 import React from 'react'
-import { SafeAreaView, ScrollView } from 'react-native'
+import { SafeAreaView, ScrollView, FlatList, View } from 'react-native'
 
 import { ScreenContainer, RoundedImage, SearchBar } from '../components'
 import { Text, Box, images } from '../../constants'
+
+import movies from '../../assets/data/movies.json'
+
+const renderItem = ({ item }) => {
+  return (
+    <View>
+      <Text variant="body">{item.titles.canonical}</Text>
+    </View>
+  )
+}
 
 const Search = () => {
     return (
@@ -27,9 +37,12 @@ const Search = () => {
                     onChangeText={(text: any) => console.log(text)}
                   />
                 </Box>
-            <ScrollView>
-              <Text>Hello</Text>
-            </ScrollView>
+                <FlatList
+                  showsHorizontalScrollIndicator={false}
+                  data={movies.anime.nodes}
+                  renderItem={renderItem}
+                  keyExtractor={(item) => item.id}
+                />
         </ScreenContainer>
     )
 }
