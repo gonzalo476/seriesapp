@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, StyleSheet, StatusBar, Platform, FlatList, Linking } from 'react-native'
+import { ScrollView, StyleSheet, StatusBar, Platform, FlatList, Linking, Alert } from 'react-native'
 
 import PersonalInfo from '../../assets/data/personalInfo.json'
 
@@ -19,6 +19,16 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === 'ios' ? '30%' : '20%',
   }
 })
+
+const handleOpenApp = (url) => (
+  Linking.canOpenURL(url).then(supported => {
+  if (supported) {
+    Linking.openURL(url);
+  } else {
+    console.log('sorry invalid url')
+  }
+})
+)
 
 const renderItem = ({ item }) => {
   return (
@@ -89,6 +99,43 @@ const Home = () => {
                     />
                   </Box>
                 </GlassSection>
+              </Box>
+              <Box alignItems="center">
+                <Text variant="title3" marginVertical="s">Social Media</Text>
+                <Box flexDirection="row">
+                  <Icon 
+                    image={icons.facebook} 
+                    isButton 
+                    onPress={
+                      () => handleOpenApp("https://www.facebook.com/gonzojak")
+                    } 
+                    size={45}
+                  />
+                  <Icon 
+                    image={icons.twitter} 
+                    isButton 
+                    onPress={
+                      () => handleOpenApp("https://twitter.com/rz_gonza")
+                    } 
+                    size={45}
+                  />
+                  <Icon 
+                    image={icons.instagram} 
+                    isButton 
+                    onPress={
+                      () => handleOpenApp("https://www.instagram.com/gonz.r.z/")
+                    } 
+                    size={45}
+                  />
+                  <Icon 
+                    image={icons.linkedin} 
+                    isButton 
+                    onPress={
+                      () => handleOpenApp("https://www.linkedin.com/in/gonzalorojas476/")
+                    } 
+                    size={45}
+                  />
+                </Box>
               </Box>
             </Box>
             <Box width="100%" height={150}/>
