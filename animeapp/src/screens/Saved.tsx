@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
+// App Context
+import { OffLineContext } from '../../contexts/OffLineContext'
+
 const Saved = () => {
+    const isConnected = useContext(OffLineContext)
+
     return (
         <View style={styles.container}>
-            <Text>Saved</Text>
+            <Text>{isConnected === false ? 'false' : 'true'}</Text>
         </View>
     )
 }

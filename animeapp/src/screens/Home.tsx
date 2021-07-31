@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, StyleSheet, StatusBar, Platform, FlatList, Linking, Alert } from 'react-native'
+import { ScrollView, StyleSheet, StatusBar, Platform, FlatList, Linking } from 'react-native'
 
 import PersonalInfo from '../../assets/data/personalInfo.json'
 
