@@ -11,6 +11,10 @@ const jsIcon = require('../assets/icons/js-icon.png');
 const sketchIcon = require('../assets/icons/sketch-icon.png');
 const education = require('../assets/icons/education.png');
 const experience = require('../assets/icons/experience.png');
+const facebook = require('../assets/icons/facebook.png');
+const twitter = require('../assets/icons/twitter.png');
+const instagram = require('../assets/icons/instagram.png');
+const linkedin = require('../assets/icons/linkedin.png');
 
 export default {
     home,
@@ -25,5 +29,9 @@ export default {
     jsIcon,
     sketchIcon,
     education,
-    experience
+    experience,
+    facebook,
+    twitter,
+    instagram,
+    linkedin
 }

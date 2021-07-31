@@ -1,9 +1,11 @@
 import React, { FC } from 'react'
-import { View, Image, StyleSheet } from 'react-native'
+import { View, Image, StyleSheet, TouchableOpacity } from 'react-native'
 
 interface iProps {
     image?: any
-    size?: number
+    size?: number,
+    isButton?: boolean,
+    onPress(): void
 }
 
 const styles = StyleSheet.create({
@@ -17,20 +19,24 @@ const styles = StyleSheet.create({
         borderColor: 'rgba(200, 200, 200, 0.16)',
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    image: {
-        height: 65,
-        width: 65
     }
 })
 
-const Icon: FC<iProps> = ({ image }) => {
-    return (
-        <View style={styles.container}>
-            <Image source={image} style={styles.image} resizeMode="contain" />
-        </View>
+const Icon: FC<iProps> = ({ image, isButton, onPress, size }) => (
+  isButton ? 
+    (
+      <TouchableOpacity style={styles.container} onPress={onPress}>
+        <Image source={image} style={{ width: size, height: size }} resizeMode="contain" />
+      </TouchableOpacity>
+    ):(
+      <View style={styles.container}>
+        <Image source={image} style={{ width: size, height: size }} resizeMode="contain" />
+      </View>
     )
-}
+)
 
 export default Icon
 
+Icon.defaultProps = {
+  size: 65
+}
