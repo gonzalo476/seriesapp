@@ -15,7 +15,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     alignItems: 'center',
     width: '100%',
-    padding: 20,
+    paddingTop: 20,
+    paddingBottom: 20,
     zIndex: -1
   },
   image: {
