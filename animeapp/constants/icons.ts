@@ -15,6 +15,7 @@ const facebook = require('../assets/icons/facebook.png');
 const twitter = require('../assets/icons/twitter.png');
 const instagram = require('../assets/icons/instagram.png');
 const linkedin = require('../assets/icons/linkedin.png');
+const alertCircle = require('../assets/icons/alert-circle.png');
 
 export default {
     home,
@@ -33,5 +34,6 @@ export default {
     facebook,
     twitter,
     instagram,
-    linkedin
+    linkedin,
+    alertCircle
 }

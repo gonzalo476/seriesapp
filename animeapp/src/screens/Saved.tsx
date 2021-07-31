@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
 const Saved = () => {
+
     return (
         <View style={styles.container}>
             <Text>Saved</Text>
