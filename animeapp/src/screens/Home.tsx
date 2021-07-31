@@ -1,8 +1,17 @@
 import React from 'react'
-import { ScrollView, StyleSheet, StatusBar, Platform } from 'react-native'
+import { ScrollView, StyleSheet, StatusBar, Platform, FlatList } from 'react-native'
+
+import PersonalInfo from '../../assets/data/personalInfo.json'
 
 import { Text, Box, images, icons } from '../../constants'
-import { ScreenContainer, RoundedImage, Icon, GlassCard } from '../components'
+import { 
+  ScreenContainer, 
+  RoundedImage, 
+  Icon, 
+  GlassCard, 
+  GlassSection,
+  ListCard
+} from '../components'
 
 const styles = StyleSheet.create({
   scrollStyles: { 
@@ -10,6 +19,25 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === 'ios' ? '30%' : '20%',
   }
 })
+
+const renderItem = ({ item }) => {
+  return (
+    <ListCard image={images.experienceImageCard} isCurrent={item.isCurrent}>
+      <Box padding="m" alignItems="center">
+        <Text variant="headline" color="black" marginVertical="s">{item.name}</Text>
+        <Text variant="caption1" color="gray">{item.company}</Text>
+        <Text 
+          variant="caption1" 
+          color="black" 
+          textAlign="center"
+          numberOfLines={5}
+        >
+            {item.description}
+        </Text>
+      </Box>
+    </ListCard>
+  )
+}
 
 const Home = () => {
     return (
@@ -41,12 +69,26 @@ const Home = () => {
               </Box>
               <Box>
                 <GlassCard width="80%" icon={icons.education}>
-                  <Text variant="title3">Education</Text>
+                  <Text variant="title3" marginVertical="s">Education</Text>
                   <Text variant="subhead" textAlign="center">
                     Graduated Software Engineer from Universidad de Colima, México. 
-                    Involved in Mobile development and Web aplications.
+                    Involved in mobile development and web applications.
                   </Text>
                 </GlassCard>
+              </Box>
+              <Box marginVertical="l" width="100%">
+                <GlassSection icon={icons.experience}>
+                  <Text variant="title3" marginVertical="m">Experience</Text>
+                  <Box width="100%">
+                    <FlatList
+                      horizontal
+                      showsHorizontalScrollIndicator={false}
+                      data={PersonalInfo}
+                      renderItem={renderItem}
+                      keyExtractor={(item) => item.id}
+                    />
+                  </Box>
+                </GlassSection>
               </Box>
             </Box>
             <Box width="100%" height={150}/>

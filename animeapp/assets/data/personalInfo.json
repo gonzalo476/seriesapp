@@ -1,0 +1,31 @@
+[
+    {
+        "id": "1",
+        "name": "FrontEnd Developer",
+        "isCurrent": true,
+        "company": "ContentPI",
+        "description": "Working on a project with React, Typescript, Express, GraphQL, Postgres, and Creating Reusable Components."
+    },
+    {
+        "id": "2",
+        "name": "FrontEnd Developer",
+        "isCurrent": false,
+        "company": "Instituto Adonai",
+        "description": "Instituto Adonai assigned to him develop a platform, The tech stack was HTML5, CSS, PHP, JQUERY, MYSQL, AJAX & Vanilla Javascript."
+    },
+    {
+        "id": "3",
+        "name": "FrontEnd Developer",
+        "isCurrent": false,
+        "company": "BrightCoders",
+        "description": "Working on best practices & writing good code. The tech stack was React Native, Firebase, Redux, Eslint, JEST,CodeClimate."
+    },
+    {
+        "id": "4",
+        "name": "Backend Developer",
+        "isCurrent": false,
+        "company": "Universidad de Colima",
+        "description": "Developing the Backend side for Universidad de Colima platform. Worked primarily on the backend side with MYSQLWorkbench."
+    }
+    
+]
