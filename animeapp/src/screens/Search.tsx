@@ -24,7 +24,7 @@ const Search = () => {
                 >
                   <SearchBar 
                     onFocus={() => console.log('focused')}
-                    onChangeText={text => console.log(text)}
+                    onChangeText={(text: any) => console.log(text)}
                   />
                 </Box>
             <ScrollView>
