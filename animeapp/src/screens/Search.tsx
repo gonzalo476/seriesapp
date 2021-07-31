@@ -1,18 +1,14 @@
 import React from 'react'
 import { SafeAreaView, ScrollView, FlatList, View } from 'react-native'
 
-import { ScreenContainer, RoundedImage, SearchBar } from '../components'
+import { ScreenContainer, RoundedImage, SearchBar, MovieCard } from '../components'
 import { Text, Box, images } from '../../constants'
 
 import movies from '../../assets/data/movies.json'
 
-const renderItem = ({ item }) => {
-  return (
-    <View>
-      <Text variant="body">{item.titles.canonical}</Text>
-    </View>
-  )
-}
+const handleReachEnd = () => (
+  console.log('end reached')
+)
 
 const Search = () => {
     return (
@@ -37,12 +33,17 @@ const Search = () => {
                     onChangeText={(text: any) => console.log(text)}
                   />
                 </Box>
-                <FlatList
-                  showsHorizontalScrollIndicator={false}
-                  data={movies.anime.nodes}
-                  renderItem={renderItem}
-                  keyExtractor={(item) => item.id}
-                />
+                <Box marginHorizontal="l">
+                  <FlatList
+                    showsVerticalScrollIndicator={false}
+                    data={movies.anime.nodes}
+                    renderItem={item => <MovieCard {...item}/>}
+                    keyExtractor={(item) => item.id}
+                    numColumns={2}
+                    ListFooterComponent={<Box width="100%" height={220}/>}
+                    onEndReached={handleReachEnd}
+                  />
+                </Box>
         </ScreenContainer>
     )
 }
