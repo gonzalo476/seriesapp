@@ -1,24 +1,49 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { SafeAreaView, FlatList } from 'react-native'
-import { useQuery } from '@apollo/client'
+import { useQuery, useLazyQuery } from '@apollo/client'
 
-import { ScreenContainer, RoundedImage, SearchBar, MovieCard, Loader } from '../components'
+import { ScreenContainer, RoundedImage, SearchBar, MovieCard, Loader, SearchList } from '../components'
 import { Text, Box, images } from '../../constants'
 
 // Query
 import getMoviesQuery from '../graphql/queries/getMovies.query'
 
-const handleReachEnd = () => (
-  console.log('end reached')
-)
+const Search = () => {
+  const [isFocused, setIsFocused] = useState<boolean>(false)
+  const [search, setSearch] = useState<string>('')
 
-function Search({ navigation }) {
-  const { loading, data, error } = useQuery(
+  const { loading, data } = useQuery(
     getMoviesQuery,
     { variables: { first: 20 } }
-  )
+  );
 
-  console.log( 'error: ', error);
+  const openList = () => {
+    setIsFocused(true)
+  }
+
+  const onBlur = () => {
+    setIsFocused(false)
+  }
+
+  function MoviesList() {
+    return (
+      <>
+        { loading ? (
+          <Loader />
+        ) : (
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            data={data.anime.nodes}
+            renderItem={item => <MovieCard {...item}/>}
+            keyExtractor={(item) => item.id}
+            numColumns={2}
+            ListFooterComponent={<Box width="100%" height={220}/>}
+            onEndReached={() => {}}
+          />
+        )}
+      </>
+    )
+  }
 
     return (
         <ScreenContainer>
@@ -38,23 +63,16 @@ function Search({ navigation }) {
                   marginVertical="l"
                 >
                   <SearchBar 
-                    onFocus={() => console.log('focused')}
-                    onChangeText={(text: any) => console.log(text)}
+                    onFocus={openList}
+                    onBlur={onBlur}
+                    onChangeText={(text: any) => setSearch(text)}
                   />
                 </Box>
                 <Box marginHorizontal="l">
-                  { loading ? (
-                    <Loader />
+                  {isFocused ? (
+                    <SearchList search={search}/>
                   ) : (
-                    <FlatList
-                      showsVerticalScrollIndicator={false}
-                      data={data.anime.nodes}
-                      renderItem={item => <MovieCard {...item}/>}
-                      keyExtractor={(item) => item.id}
-                      numColumns={2}
-                      ListFooterComponent={<Box width="100%" height={220}/>}
-                      onEndReached={() => {}}
-                    />
+                    MoviesList()
                   )}
                 </Box>
         </ScreenContainer>
