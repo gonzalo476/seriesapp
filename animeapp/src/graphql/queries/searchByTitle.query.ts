@@ -5,16 +5,18 @@ export default gql`
     searchAnimeByTitle(first: $first, title: $title){
         nodes{
             id,
-            ageRating,
             titles{
                 canonical
             },
+            episodeCount,
             description,
             episodeLength,
-            episodeCount,
-            averageRating,
-            favoritesCount
+            posterImage{
+                original{
+                url
+                }
             }
         }
+    }
     }
 `
