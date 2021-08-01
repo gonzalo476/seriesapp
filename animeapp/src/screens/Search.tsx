@@ -1,16 +1,25 @@
 import React from 'react'
-import { SafeAreaView, ScrollView, FlatList, View } from 'react-native'
+import { SafeAreaView, FlatList } from 'react-native'
+import { useQuery } from '@apollo/client'
 
-import { ScreenContainer, RoundedImage, SearchBar, MovieCard } from '../components'
+import { ScreenContainer, RoundedImage, SearchBar, MovieCard, Loader } from '../components'
 import { Text, Box, images } from '../../constants'
 
-import movies from '../../assets/data/movies.json'
+// Query
+import getMoviesQuery from '../graphql/queries/getMovies.query'
 
 const handleReachEnd = () => (
   console.log('end reached')
 )
 
-const Search = () => {
+function Search({ navigation }) {
+  const { loading, data, error } = useQuery(
+    getMoviesQuery,
+    { variables: { first: 20 } }
+  )
+
+  console.log( 'error: ', error);
+
     return (
         <ScreenContainer>
             <SafeAreaView />
@@ -34,15 +43,19 @@ const Search = () => {
                   />
                 </Box>
                 <Box marginHorizontal="l">
-                  <FlatList
-                    showsVerticalScrollIndicator={false}
-                    data={movies.anime.nodes}
-                    renderItem={item => <MovieCard {...item}/>}
-                    keyExtractor={(item) => item.id}
-                    numColumns={2}
-                    ListFooterComponent={<Box width="100%" height={220}/>}
-                    onEndReached={handleReachEnd}
-                  />
+                  { loading ? (
+                    <Loader />
+                  ) : (
+                    <FlatList
+                      showsVerticalScrollIndicator={false}
+                      data={data.anime.nodes}
+                      renderItem={item => <MovieCard {...item}/>}
+                      keyExtractor={(item) => item.id}
+                      numColumns={2}
+                      ListFooterComponent={<Box width="100%" height={220}/>}
+                      onEndReached={() => {}}
+                    />
+                  )}
                 </Box>
         </ScreenContainer>
     )
