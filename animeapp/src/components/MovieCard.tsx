@@ -4,7 +4,8 @@ import { TouchableOpacity, View, StyleSheet, ImageBackground, Dimensions } from 
 import { Text } from '../../constants'
 
 interface iProps {
-    item?: any
+  item?: any,
+  navigation?: any
 }
 
 const { width } = Dimensions.get("window")
@@ -37,10 +38,13 @@ const styles = StyleSheet.create({
     }
 })
 
-const MovieCard: FC<iProps> = ({ item }) => {
+const MovieCard: FC<iProps> = ({ item, navigation }) => {
     const { titles,  episodeCount, episodeLength, posterImage, id } = item
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity 
+          style={styles.container}
+          onPress={() => navigation.navigate("Movie", { id: id, title: titles.canonical })}
+        >
             <ImageBackground
               source={{ uri: posterImage.original.url }}
               style={styles.movieInfoStyles}

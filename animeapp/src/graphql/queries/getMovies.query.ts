@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client'
 
 export default gql`
-    query anime($first: Int!){
-        anime(first: $first) {
+    query anime($first: Int!, $cursor: String!){
+        anime(first: $first, after: $cursor ) {
             pageInfo{
                 hasNextPage,
                 endCursor,

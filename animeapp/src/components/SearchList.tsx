@@ -11,9 +11,10 @@ import Loader from './Loader'
 
 interface iProps {
     search?: string
+    navigation?: any
 }
 
-const SearchList: FC<iProps> = ({ search }) => {
+const SearchList: FC<iProps> = ({ search, navigation }) => {
 
   const { loading, data } = useQuery(
     searchByTitleQuery,
@@ -28,7 +29,7 @@ const SearchList: FC<iProps> = ({ search }) => {
         <FlatList
           showsVerticalScrollIndicator={false}
           data={data.searchAnimeByTitle.nodes}
-          renderItem={item => <SearchListCard {...item}/>}
+          renderItem={item => <SearchListCard {...item} navigation={navigation} />}
           keyExtractor={(item) => item.id}
           ListFooterComponent={<Box width="100%" height={220}/>}
           onEndReached={() => {}}

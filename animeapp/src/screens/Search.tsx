@@ -1,20 +1,30 @@
 import React, { useState, useEffect } from 'react'
 import { SafeAreaView, FlatList } from 'react-native'
-import { useQuery, useLazyQuery } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 
-import { ScreenContainer, RoundedImage, SearchBar, MovieCard, Loader, SearchList } from '../components'
+import { 
+  ScreenContainer, 
+  RoundedImage, 
+  SearchBar, 
+  MovieCard, 
+  Loader, 
+  SearchList 
+} from '../components'
 import { Text, Box, images } from '../../constants'
 
 // Query
 import getMoviesQuery from '../graphql/queries/getMovies.query'
 
-const Search = () => {
+const Search = ({ navigation }) => {
   const [isFocused, setIsFocused] = useState<boolean>(false)
   const [search, setSearch] = useState<string>('')
 
-  const { loading, data } = useQuery(
-    getMoviesQuery,
-    { variables: { first: 20 } }
+  const { loading, data } = 
+    useQuery(
+      getMoviesQuery,
+      { 
+        variables: { first: 20, cursor: "" },
+      }
   );
 
   const openList = () => {
@@ -23,6 +33,19 @@ const Search = () => {
 
   const onBlur = () => {
     setIsFocused(false)
+  }
+
+  function renderFooter() {
+    return(
+      <>
+        { loading ? (
+          <Box>
+            <Loader />
+            <Box width="100%" height={420} />
+          </Box>
+        ) : null }
+      </>
+    )
   }
 
   function MoviesList() {
@@ -34,11 +57,10 @@ const Search = () => {
           <FlatList
             showsVerticalScrollIndicator={false}
             data={data.anime.nodes}
-            renderItem={item => <MovieCard {...item}/>}
+            renderItem={item => <MovieCard {...item} navigation={navigation} />}
             keyExtractor={(item) => item.id}
             numColumns={2}
-            ListFooterComponent={<Box width="100%" height={220}/>}
-            onEndReached={() => {}}
+            ListFooterComponent={renderFooter()}
           />
         )}
       </>
@@ -70,7 +92,7 @@ const Search = () => {
                 </Box>
                 <Box marginHorizontal="l">
                   {isFocused ? (
-                    <SearchList search={search}/>
+                    <SearchList search={search} navigation={navigation} />
                   ) : (
                     MoviesList()
                   )}

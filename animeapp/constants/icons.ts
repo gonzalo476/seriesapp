@@ -17,6 +17,11 @@ const instagram = require('../assets/icons/instagram.png');
 const linkedin = require('../assets/icons/linkedin.png');
 const alertCircle = require('../assets/icons/alert-circle.png');
 const search = require('../assets/icons/search.png');
+const medal = require('../assets/icons/medal.png');
+const star = require('../assets/icons/star.png');
+const chevronLeft = require('../assets/icons/chevron-left.png');
+const share = require('../assets/icons/share.png');
+const close = require('../assets/icons/x.png');
 
 export default {
     home,
@@ -37,5 +42,10 @@ export default {
     instagram,
     linkedin,
     alertCircle,
-    search
+    search,
+    medal,
+    star,
+    chevronLeft,
+    share,
+    close
 }

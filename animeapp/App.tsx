@@ -1,5 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from '@shopify/restyle'
+import { LogBox } from 'react-native'
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
 
 // App Providers
@@ -13,6 +14,8 @@ const client = new ApolloClient({
   uri: 'https://kitsu.io/api/graphql',
   cache: new InMemoryCache()
 })
+
+LogBox.ignoreAllLogs();
 
 const App = () => {
   return (
