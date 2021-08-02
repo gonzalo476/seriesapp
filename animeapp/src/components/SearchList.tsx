@@ -22,7 +22,7 @@ const SearchList: FC<iProps> = ({ search, navigation }) => {
   );
 
   return (
-    <Box height="100%" width="100%">
+    <Box height="100%" width="100%"> 
       {loading ? (
         <Loader />
       ) : (
