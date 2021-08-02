@@ -1,40 +1,64 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { View, FlatList, SafeAreaView, Alert } from 'react-native'
 
-import { useSave } from '../../contexts/SavedItemsContext'
+import { ScreenContainer, MovieCard, IconGlassButton } from '../components'
+import { Text, Box, icons } from '../../constants'
+import { useSave, useDispatch } from '../../contexts/SavedItemsContext'
 
-const Saved = () => {
+const Saved = ({ navigation }) => {
     const items = useSave();
+    const dispatch = useDispatch();
+
+    const handleDeleteAll = () => {
+      Alert.alert(
+        "Delete All",
+        "delete all saved movies?",
+        [
+          {
+            text: "Cancel",
+          },
+          {
+            text: "Delete All",
+            onPress: () => {dispatch({ type: "CLEAR_ITEMS"})}
+          }
+        ],
+      )
+    }
 
     const MovieItems = () => {
-        return(
-            items.map((item:any) => (
-                <View key={item.id}>
-                    <Text>{item.id}</Text>
-                    <Text>{item.title}</Text>
-                </View>
-            ))
-        )
+      return(
+        <View>
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            data={items}
+            renderItem={item => <MovieCard {...item} navigation={navigation} />}
+            keyExtractor={(item) => item.id}
+            numColumns={2}
+            style={{ height: '100%'}}
+          />
+        </View>
+      )
     }
 
     return (
-        <View style={styles.container}>
-            {items.length === 0 ? (
-                <Text>You dont have saved movies yet!</Text>
-            ) : (
-                <MovieItems />
-            )}
-        </View>
+        <ScreenContainer>
+            <Box marginHorizontal="l" flex={1}>
+              <SafeAreaView />
+              <Box marginVertical="s" justifyContent="space-between" flexDirection="row">
+                <Text variant="largeTitle">Saved Movies</Text>
+                <IconGlassButton icon={icons.trash} onPress={handleDeleteAll}/>
+              </Box>
+                {items.length === 0 ? (
+                  <Box>
+                    <Text variant="body">You dont have any added movies!</Text>
+                  </Box>
+                ) : (
+                  <MovieItems />
+                )}
+            </Box>
+        </ScreenContainer>
     )
 }
 
 
 export default Saved
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
-})
