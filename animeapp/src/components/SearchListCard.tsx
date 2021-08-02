@@ -4,7 +4,8 @@ import { View, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import { Text, Box } from '../../constants'
 
 interface iProps {
-    item?: any
+    item?: any,
+    navigation?: any
 }
 
 const styles = StyleSheet.create({
@@ -32,11 +33,14 @@ const styles = StyleSheet.create({
     }
 })
  
-const SearchListCard: FC<iProps> = ({ item }) => {
-    const { titles, posterImage, description, episodeCount, episodeLength } = item
+const SearchListCard: FC<iProps> = ({ item, navigation }) => {
+    const { titles, posterImage, description, episodeCount, episodeLength, id } = item
  
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity 
+            style={styles.container}
+            onPress={() => navigation.navigate("Movie", { id: id })}
+        >
             <Image source={{ uri: posterImage.original.url }} style={styles.image}/>
             <View style={styles.infoContainer}>
                 <Text variant="title3" numberOfLines={1} marginVertical="s">{titles.canonical}</Text>

@@ -1,27 +1,27 @@
 import { gql } from '@apollo/client'
 
 export default gql` 
-    query findAnimeById($id: String!){
-    findAnimeById(id: $id) {
-    titles {
-      canonical
-    }
-    averageRating
-    favoritesCount
-    youtubeTrailerVideoId
-    episodeCount
-    episodeLength
-    bannerImage {
-      original {
-        url
+    query findAnimeById($id: ID!){
+      findAnimeById(id: $id){
+      titles {
+        canonical
       }
-    }
-    posterImage {
-      original {
-        url
+      averageRating
+      favoritesCount
+      youtubeTrailerVideoId
+      episodeCount
+      episodeLength
+      bannerImage {
+        original {
+          url
+        }
       }
-    }
-    description
-  }  
+      posterImage {
+        original {
+          url
+        }
+      }
+      description
+    }  
 }
 `

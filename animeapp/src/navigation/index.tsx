@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 // App tabs
 import AppTabs from './tabs'
+import Movie from '../screens/Movie'
 
 const Stack = createStackNavigator()
 
@@ -12,6 +13,7 @@ function AppNavigator() {
         <NavigationContainer>
             <Stack.Navigator headerMode="none">
                 <Stack.Screen name="Home" component={AppTabs} />
+                <Stack.Screen name="Movie" component={Movie} />
             </Stack.Navigator>
         </NavigationContainer>
     )
