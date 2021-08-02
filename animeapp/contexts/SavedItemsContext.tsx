@@ -14,7 +14,10 @@ const reducer = (state = [], action: any) => {
         case 'SAVE_ITEM':
             return[...state, action.item]
         case 'REMOVE_SAVED_ITEM':
-            return state.filter(savedItem => savedItem !== action.item)
+            const list = [...state]
+            // Remove just the item that has the same id and store in to the constant
+            const newList = list.filter((item) => item.id !== action.item.id)
+            return newList
         case 'CLEAR_ITEMS':
             return state = []
     }

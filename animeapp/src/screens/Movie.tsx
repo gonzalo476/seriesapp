@@ -1,9 +1,9 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, StyleSheet, ImageBackground, Button, ScrollView, Platform, Linking } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import { useQuery } from '@apollo/client'
 
-import { useDispatch } from '../../contexts/SavedItemsContext'
+import { useDispatch, useSave } from '../../contexts/SavedItemsContext'
 
 import findByIdQuery from '../graphql/queries/findById.query'
 
@@ -40,6 +40,17 @@ const Movie = ( props:any ) => {
     const [toggleSaveItem, setToggleSaveItem] = useState<boolean>(false)
     const { id, title } = route.params;
     const dispatch = useDispatch()
+    const SavedItems = useSave();
+
+
+    useEffect(() => {
+      const filtered = SavedItems.find((item:any) => item.id === id);
+      if(filtered === undefined) {
+        setToggleSaveItem(false)
+      } else {
+        setToggleSaveItem(true)
+      }
+    }, [])
 
     const { data, loading } = useQuery(
         findByIdQuery,
@@ -71,14 +82,20 @@ const Movie = ( props:any ) => {
         posterImage, 
         bannerImage, 
         youtubeTrailerVideoId 
-      } = data.findAnimeById;
+      } = data.findAnimeById; 
 
+      // Handle Save and Remove items
       const handleSaveItem = () => {
         setToggleSaveItem(!toggleSaveItem)
         const item = {id, title, posterImage, episodeLength, episodeCount}
-        dispatch({ type: "SAVE_ITEM", item })
+        if(toggleSaveItem === false){
+          dispatch({ type: "SAVE_ITEM", item })
+        } else {
+          dispatch({ type: "REMOVE_SAVED_ITEM", item })
+        }
       }
 
+      // handle redirect to youtube
       const handleOpenYoutubeVideo = () => (
          Linking.canOpenURL(`vnd.youtube://www.youtube.com/watch?v=${youtubeTrailerVideoId}`)
          .then(suported => {

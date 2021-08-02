@@ -3,14 +3,15 @@ import { StyleSheet, Text, View } from 'react-native'
 
 import { useSave } from '../../contexts/SavedItemsContext'
 
-const Saved = ( props : any ) => {
+const Saved = () => {
     const items = useSave();
 
-    function MovieItems(){
+    const MovieItems = () => {
         return(
-            items.map((item:any, index:any) => (
-                <View>
-                    <Text key={index}>{item.title}</Text>
+            items.map((item:any) => (
+                <View key={item.id}>
+                    <Text>{item.id}</Text>
+                    <Text>{item.title}</Text>
                 </View>
             ))
         )
@@ -21,7 +22,7 @@ const Saved = ( props : any ) => {
             {items.length === 0 ? (
                 <Text>You dont have saved movies yet!</Text>
             ) : (
-                MovieItems()
+                <MovieItems />
             )}
         </View>
     )
