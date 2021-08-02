@@ -5,6 +5,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
 
 // App Providers
 import { OffLineProvider } from './contexts/OffLineContext' 
+import { SavedItemsProvider } from './contexts/SavedItemsContext'
 
 import { Theme } from './constants'
 import Navigator from './src/navigation'
@@ -23,7 +24,9 @@ const App = () => {
     <ApolloProvider client={client}>
       <ThemeProvider theme={Theme}>
         <OffLineProvider>
-          <Navigator />
+          <SavedItemsProvider>
+            <Navigator />
+          </SavedItemsProvider>
         </OffLineProvider>
       </ThemeProvider>
     </ApolloProvider>
