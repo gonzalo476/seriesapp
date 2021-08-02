@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { View, StyleSheet, ImageBackground, Button, ScrollView, Platform } from 'react-native'
+import React, { useState, useCallback } from 'react'
+import { View, StyleSheet, ImageBackground, Button, ScrollView, Platform, Linking } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import { useQuery } from '@apollo/client'
 
@@ -60,11 +60,29 @@ const Movie = ({ route, navigation }) => {
     }
 
     function MovieComponent(){
-      const { episodeCount, episodeLength, description, posterImage, bannerImage } = data.findAnimeById;
+      const { 
+        episodeCount, 
+        episodeLength, 
+        description, 
+        posterImage, 
+        bannerImage, 
+        youtubeTrailerVideoId 
+      } = data.findAnimeById;
 
       const handleSaveItem = () => {
         setToggleSaveItem(!toggleSaveItem)
       }
+
+      const handleOpenYoutubeVideo = () => (
+         Linking.canOpenURL(`vnd.youtube://www.youtube.com/watch?v=${youtubeTrailerVideoId}`)
+         .then(suported => {
+           if(suported) {
+             Linking.openURL(`vnd.youtube://www.youtube.com/watch?v=${youtubeTrailerVideoId}`)
+           } else {
+             Linking.openURL(`https://www.youtube.com/watch?v=${youtubeTrailerVideoId}`)
+           }
+         })
+      )
 
       return (
         <ScrollView>
@@ -126,8 +144,12 @@ const Movie = ({ route, navigation }) => {
                 <UIButton 
                   text="See Trailer" 
                   textColor="black" 
-                  onPress={() => {}} 
-                  color="white" disabled
+                  onPress={handleOpenYoutubeVideo} 
+                  color="white" 
+                  disabled={
+                    youtubeTrailerVideoId === null ?
+                    true : false
+                  }
                 />
               </Box>
             </Box>
