@@ -76,6 +76,7 @@ const Movie = ( props:any ) => {
 
     function MovieComponent(){
       const { 
+        titles,
         episodeCount, 
         episodeLength, 
         description, 
@@ -87,7 +88,7 @@ const Movie = ( props:any ) => {
       // Handle Save and Remove items
       const handleSaveItem = () => {
         setToggleSaveItem(!toggleSaveItem)
-        const item = {id, title, posterImage, episodeLength, episodeCount}
+        const item = {id, titles, posterImage, episodeLength, episodeCount}
         if(toggleSaveItem === false){
           dispatch({ type: "SAVE_ITEM", item })
         } else {

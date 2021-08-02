@@ -22,6 +22,7 @@ const star = require('../assets/icons/star.png');
 const chevronLeft = require('../assets/icons/chevron-left.png');
 const share = require('../assets/icons/share.png');
 const close = require('../assets/icons/x.png');
+const trash = require('../assets/icons/trash.png');
 
 export default {
     home,
@@ -47,5 +48,6 @@ export default {
     star,
     chevronLeft,
     share,
-    close
+    close,
+    trash
 }
