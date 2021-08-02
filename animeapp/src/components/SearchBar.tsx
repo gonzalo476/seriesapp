@@ -1,5 +1,5 @@
-import React from 'react'
-import { View, TextInput, StyleSheet, Image } from 'react-native'
+import React, { FC } from 'react'
+import { View, TextInput, StyleSheet, Image, TouchableOpacity } from 'react-native'
 
 import { icons } from '../../constants'
 
@@ -22,12 +22,12 @@ const styles = StyleSheet.create({
     },
     inputStyles: {
         color: 'white',
-        width: '92%',
+        width: '85%',
         fontFamily: 'Gellix-Regular'
     }
 })
 
-const SearchBar = props => {
+const SearchBar = ( props: any ) => {
     return (
         <View style={styles.container}>
             <Image 
@@ -42,6 +42,18 @@ const SearchBar = props => {
                 returnKeyType="search"
                 {...props}
             />
+            {props.isFocused ? (
+                <TouchableOpacity
+                    onPress={props.onPressClose}
+                    style={{ marginLeft: 5 }}
+                >
+                    <Image 
+                        source={icons.close}
+                        style={styles.image}
+                        resizeMode="contain"
+                    />
+                </TouchableOpacity>
+            ) : null }
         </View>
     )
 }

@@ -33,7 +33,7 @@ const Search = ({ navigation }) => {
 
   const onBlur = () => {
     setIsFocused(false)
-  }
+  } 
 
   function renderFooter() {
     return(
@@ -86,8 +86,9 @@ const Search = ({ navigation }) => {
                 >
                   <SearchBar 
                     onFocus={openList}
-                    onBlur={onBlur}
+                    onPressClose={onBlur}
                     onChangeText={(text: any) => setSearch(text)}
+                    isFocused={isFocused}
                   />
                 </Box>
                 <Box marginHorizontal="l">
