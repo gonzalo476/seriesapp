@@ -3,6 +3,8 @@ import { View, StyleSheet, ImageBackground, Button, ScrollView, Platform, Linkin
 import LinearGradient from 'react-native-linear-gradient'
 import { useQuery } from '@apollo/client'
 
+import { useDispatch } from '../../contexts/SavedItemsContext'
+
 import findByIdQuery from '../graphql/queries/findById.query'
 
 import { Text, Box, icons } from '../../constants'
@@ -33,9 +35,11 @@ const styles = StyleSheet.create({
     }
 })
 
-const Movie = ({ route, navigation }) => {
+const Movie = ( props:any ) => {
+    const { route, navigation } = props
     const [toggleSaveItem, setToggleSaveItem] = useState<boolean>(false)
     const { id, title } = route.params;
+    const dispatch = useDispatch()
 
     const { data, loading } = useQuery(
         findByIdQuery,
@@ -71,6 +75,8 @@ const Movie = ({ route, navigation }) => {
 
       const handleSaveItem = () => {
         setToggleSaveItem(!toggleSaveItem)
+        const item = {id, title, posterImage, episodeLength, episodeCount}
+        dispatch({ type: "SAVE_ITEM", item })
       }
 
       const handleOpenYoutubeVideo = () => (

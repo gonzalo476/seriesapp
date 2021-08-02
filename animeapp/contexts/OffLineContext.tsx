@@ -33,7 +33,7 @@ const OffLineProvider: FC<iProps> = ({ children }) => {
     const [isOnline, setIsOnline] = useState(true)
 
     useEffect(() => {
-        const unsubscribe = NetInfo.addEventListener((state) => {
+        const unsubscribe = NetInfo.addEventListener((state:any) => {
             setIsOnline(state.isConnected)
         })
         return () => unsubscribe()

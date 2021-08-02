@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/client'
 // Query
 import searchByTitleQuery from "../graphql/queries/searchByTitle.query"
 
-import { Text, Box } from "../../constants"
+import { Box } from "../../constants"
 import SearchListCard from './SearchListCard'
 import Loader from './Loader'
 

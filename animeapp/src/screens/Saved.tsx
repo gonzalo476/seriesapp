@@ -1,14 +1,32 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-const Saved = () => {
+import { useSave } from '../../contexts/SavedItemsContext'
+
+const Saved = ( props : any ) => {
+    const items = useSave();
+
+    function MovieItems(){
+        return(
+            items.map((item:any, index:any) => (
+                <View>
+                    <Text key={index}>{item.title}</Text>
+                </View>
+            ))
+        )
+    }
 
     return (
         <View style={styles.container}>
-            <Text>Saved</Text>
+            {items.length === 0 ? (
+                <Text>You dont have saved movies yet!</Text>
+            ) : (
+                MovieItems()
+            )}
         </View>
     )
 }
+
 
 export default Saved
 
