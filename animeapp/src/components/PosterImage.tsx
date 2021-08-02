@@ -1,5 +1,8 @@
 import React, { FC, useState } from 'react'
-import { View, StyleSheet, Image, Modal, TouchableOpacity, Text } from 'react-native'
+import { View, StyleSheet, Image, Modal, TouchableOpacity } from 'react-native'
+
+import { icons } from '../../constants'
+import { IconGlassButton } from '../components'
 
 interface iProps {
     imageUrl?: string
@@ -15,11 +18,19 @@ const styles = StyleSheet.create({
         height: '100%',
         borderRadius: 20
     },
-    modalContainer: {
-        flex: 1,
+    bigImage: {
+        width: '90%',
+        height: '80%',
+        borderRadius: 20,
     },
-    modalStyles: {
-        backgroundColor: 'black'
+    modalCloseButton: {
+        margin: 10
+    },
+    modalInner: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "black"
     }
 })
 
@@ -27,18 +38,22 @@ const PosterImage: FC<iProps> = ({ imageUrl }) => {
     const [modalVisible, setModalVisible] = useState<boolean>(false)
 
     const handleCloseModal = () => {
-
+        setModalVisible(!modalVisible)
     }
 
     function UIModal() {
         return(
-            <View style={styles.modalContainer}>
+            <View>
                 <Modal
                     animationType="fade"
                     visible={modalVisible}
-                    style={styles.modalStyles}
                 >
-                    <Text>Modal</Text>
+                    <View style={styles.modalInner}>
+                        <Image source={{ uri: imageUrl }} style={styles.bigImage} />
+                        <View style={styles.modalCloseButton}>
+                            <IconGlassButton icon={icons.close} onPress={handleCloseModal}/>
+                        </View>
+                    </View>
                 </Modal>
             </View>
         )

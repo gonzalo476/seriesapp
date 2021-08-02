@@ -64,7 +64,6 @@ const Movie = ({ route, navigation }) => {
 
       const handleSaveItem = () => {
         setToggleSaveItem(!toggleSaveItem)
-        console.log('save item')
       }
 
       return (
