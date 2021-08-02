@@ -1,12 +1,12 @@
-import React, { FC } from 'react'
-import { View, StyleSheet, ImageBackground, Button, ScrollView, Image } from 'react-native'
+import React, { useState } from 'react'
+import { View, StyleSheet, ImageBackground, Button, ScrollView, Platform } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import { useQuery } from '@apollo/client'
 
 import findByIdQuery from '../graphql/queries/findById.query'
 
-import { Text, Box, images } from '../../constants'
-import { Loader, Rating, UIButton, PosterImage } from '../components'
+import { Text, Box, icons } from '../../constants'
+import { Loader, Rating, UIButton, PosterImage, IconGlassButton } from '../components'
 
 const styles = StyleSheet.create({
     container: {
@@ -21,10 +21,20 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 300,
         justifyContent: "flex-end"
-    } 
+    },
+    buttonsContainer: {
+      justifyContent: 'space-between',
+      position: 'absolute',
+      flexDirection: 'row',
+      zIndex: 10,
+      top: Platform.OS === 'ios' ? 44 : 10,
+      left: 20,
+      right: 20
+    }
 })
 
 const Movie = ({ route, navigation }) => {
+    const [toggleSaveItem, setToggleSaveItem] = useState<boolean>(false)
     const { id, title } = route.params;
 
     const { data, loading } = useQuery(
@@ -51,6 +61,12 @@ const Movie = ({ route, navigation }) => {
 
     function MovieComponent(){
       const { episodeCount, episodeLength, description, posterImage, bannerImage } = data.findAnimeById;
+
+      const handleSaveItem = () => {
+        setToggleSaveItem(!toggleSaveItem)
+        console.log('save item')
+      }
+
       return (
         <ScrollView>
           <ImageBackground
@@ -63,7 +79,21 @@ const Movie = ({ route, navigation }) => {
             }
             style={styles.imageContainer}
             imageStyle={styles.image}
+            
           >
+            <View style={styles.buttonsContainer}>
+              <IconGlassButton icon={icons.chevronLeft} onPress={() => navigation.goBack()} />
+              <Box>
+                <Box marginBottom="s">
+                  <IconGlassButton icon={icons.share} onPress={() => {}} />
+                </Box>
+                <IconGlassButton 
+                  icon={toggleSaveItem ? icons.save : icons.saveOutline} 
+                  onPress={handleSaveItem} 
+                  tintColor={toggleSaveItem ? "#1CA8E2" : "white"}
+                />
+              </Box>
+            </View>
             <Box position="absolute" bottom={0} zIndex={10}>
               <Text variant="title1" padding="l" numberOfLines={3}>{title}</Text>
             </Box>

@@ -19,6 +19,8 @@ const alertCircle = require('../assets/icons/alert-circle.png');
 const search = require('../assets/icons/search.png');
 const medal = require('../assets/icons/medal.png');
 const star = require('../assets/icons/star.png');
+const chevronLeft = require('../assets/icons/chevron-left.png');
+const share = require('../assets/icons/share.png');
 
 export default {
     home,
@@ -41,5 +43,7 @@ export default {
     alertCircle,
     search,
     medal,
-    star
+    star,
+    chevronLeft,
+    share
 }
